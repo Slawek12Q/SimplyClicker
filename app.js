@@ -2,6 +2,10 @@ const button = document.querySelector("button");
 let number = 1;
 let counter = 1;
 
+let size = 100.0;                  
+button.style.width = size +"px";
+button.style.height = size*0.6+"px";
+
 let fib = []
 fib[0] = 1
 fib[1] = 1 
@@ -27,4 +31,20 @@ const addElement = function () {
         number++; 
 }
 
+
+const growUp = function () {
+    if(size < window.innerWidth * 0.5 )
+    {
+        size++;
+        button.style.width = size +"px";
+        button.style.height = size*0.6+"px";
+    }
+    else {
+        button.textContent = "I'm the biggest now ;)";
+    }
+
+}
+
 button.addEventListener("click", addElement);
+window.addEventListener("scroll", growUp);
+
