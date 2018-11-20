@@ -47,4 +47,14 @@ const growUp = function () {
 
 button.addEventListener("click", addElement);
 window.addEventListener("scroll", growUp);
+button.addEventListener("contextmenu", function(){
+    if(button.style.backgroundColor == "white"){
+        button.style.backgroundColor = "black";
+        button.style.color = "white";
+    }
+    else {
+        button.style.backgroundColor = "white";
+        button.style.color = "black";
+    }
+})
 
